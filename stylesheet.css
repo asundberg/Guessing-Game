@@ -4,17 +4,43 @@ body {
 h1 {
 	color: #c01b67;
 }
+
+input {
+	height: 52px;
+	width: 200px;
+	text-align: center;
+	font-size: 12px;
+}
+
 button {
     height: 52px;
-    background: #6bd2db;
+    background: white;
     border: 2px solid rgba(33, 68, 72, 0.59);
     border-radius: 5px;
  	/*text styling next*/
- 	color: rgba(0, 0, 0, 0.55);
+ 	color: green;
     text-align: center;
     padding: 5px;
-    font: bold 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font: 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    cursor: pointer;
+}
+
+button[name="guessAgain"] {
+    background: #6bd2db;
+ 	/*text styling next*/
+ 	color: rgba(0, 0, 0, 0.55);
+    font-weight: bold;
 }
 /*RGBa is a way to declare a color in CSS that includes 
 alpha transparency support. It looks like this: 
 div { background: rgba(200, 54, 54, 0.5); }*/
+button:hover {
+	color: white;
+	background: green;
+}
+
+button[name="guessAgain"]:hover {
+	color: #6bd2db;
+	background: rgba(0, 0, 0, 0.55);
+}
+
