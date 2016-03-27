@@ -1,21 +1,20 @@
+body {
+	text-align: center;
+}
 h1 {
 	color: #c01b67;
 }
-
-.button {
-	display: block;
- 	height: 50px;
- 	width: 200px;
- 	background: #6bd2db;
- 	border: 2px solid rgba(33, 68, 72, 0.59);
- 	border-radius: 5px;
+button {
+    height: 52px;
+    background: #6bd2db;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+    border-radius: 5px;
  	/*text styling next*/
  	color: rgba(0, 0, 0, 0.55);
- 	text-align: center;
- 	padding-top: 17px;
- 	font: bold 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    text-align: center;
+    padding: 5px;
+    font: bold 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 /*RGBa is a way to declare a color in CSS that includes 
 alpha transparency support. It looks like this: 
 div { background: rgba(200, 54, 54, 0.5); }*/
-
