@@ -27,8 +27,14 @@ $(document).ready(function(){
 
 	function playersGuessSubmission(){
 	// add code here
-		playersGuess = $("input[name=guessNumber]").val();
+		playersGuess = parseInt($('input[name=guessNumber]').val());
 	}
+
+	$('button[name=submit').on('click', function() {
+		playersGuessSubmission();
+		console.log(playersGuess);
+	});
+
 
 // Determine if the next guess should be a lower or higher number
 
