@@ -25,7 +25,7 @@ button {
     cursor: pointer;
 }
 
-button[name="guessAgain"] {
+button[name="hint"] {
     background: #6bd2db;
  	/*text styling next*/
  	color: rgba(0, 0, 0, 0.55);
@@ -39,7 +39,7 @@ button:hover {
 	background: green;
 }
 
-button[name="guessAgain"]:hover {
+button[name="hint"]:hover {
 	color: #6bd2db;
 	background: rgba(0, 0, 0, 0.55);
 }

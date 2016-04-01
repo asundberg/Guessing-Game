@@ -65,9 +65,9 @@ $(document).ready(function(){
 	function checkGuess(){
 	// add code here
 		if(guesses.indexOf(playersGuess) >= 0) {
-			$('.message').text("Duplicate guess, try again!");
+			$('.message').text('Duplicate guess, try again!');
 		} else if(playersGuess === winningNumber) {
-			$('.message').text("Congratulations, you won the game!");
+			$('.message').text('Congratulations, you won the game!');
 		} else {
 			$('.message').text(lowerOrHigher());
 		}
@@ -75,10 +75,9 @@ $(document).ready(function(){
 	}
 
 // Create a provide hint button that provides additional clues to the "Player"
-
-	function provideHint(){
-	// add code here
-	}
+	$('button[name=hint').on('click', function() {
+		$('.message').text('HINT: When divided by 10, the remainder of the winning number is ' + (winningNumber%10) + '.');
+	});
 
 // Allow the "Player" to Play Again
 
