@@ -2,7 +2,9 @@ body {
 	text-align: center;
 }
 h1 {
+	margin-bottom: 30px;
 	color: #c01b67;
+	font-size: 40px;
 }
 
 input {
@@ -14,11 +16,11 @@ input {
 
 button {
     height: 52px;
-    background: white;
+    background: green;
     border: 2px solid rgba(33, 68, 72, 0.59);
     border-radius: 5px;
  	/*text styling next*/
- 	color: green;
+ 	color: white;
     text-align: center;
     padding: 5px;
     font: 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
@@ -26,26 +28,44 @@ button {
 }
 
 button[name="hint"] {
+	margin: 10px;
     background: #6bd2db;
  	/*text styling next*/
- 	color: rgba(0, 0, 0, 0.55);
-    font-weight: bold;
+ 	color: #e9edf0;
 }
-/*RGBa is a way to declare a color in CSS that includes 
-alpha transparency support. It looks like this: 
-div { background: rgba(200, 54, 54, 0.5); }*/
+
+button[name="playAgain"] {
+	margin: 10px;
+    background: #f0e2d7;
+ 	/*text styling next*/
+ 	color: #484547;
+}
+
 button:hover {
 	color: white;
-	background: green;
+	background: #215e38;
 }
 
 button[name="hint"]:hover {
-	color: #6bd2db;
-	background: rgba(0, 0, 0, 0.55);
+	color: #e9edf0;
+	background: #528881;
+}
+
+button[name="playAgain"]:hover {
+	color: #484547;
+	background: #ccb6b4;
 }
 
 .message {
-	margin: 100px;
+	margin: 20px;
 	font-size: 30px;
+}
+
+.loser {
+	display: none;
+}
+
+.winner {
+	display: none;
 }
 

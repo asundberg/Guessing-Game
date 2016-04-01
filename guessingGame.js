@@ -60,18 +60,23 @@ $(document).ready(function(){
 	}
 
 // Check if the Player's Guess is the winning number 
-	var guesses = []; 
+	var guesses = [];
+	var numberOfGuesses = 4; 
 
 	function checkGuess(){
 	// add code here
-		if(guesses.indexOf(playersGuess) >= 0) {
+		if(guesses.length >= numberOfGuesses - 1) {
+			$('.message').text('You have lost the game...');
+			$('.loser').show();
+		} else if(guesses.indexOf(playersGuess) >= 0) {
 			$('.message').text('Duplicate guess, try again!');
 		} else if(playersGuess === winningNumber) {
-			$('.message').text('Congratulations, you won the game!');
+			$('.message').text('Yay!! Congratulations, you won the game!');
+			$('.winner').show();
 		} else {
-			$('.message').text(lowerOrHigher());
+			guesses.push(playersGuess);
+			$('.message').text(lowerOrHigher() + ' Number of guesses left: ' + (numberOfGuesses - guesses.length) + '.');
 		}
-		guesses.push(playersGuess);
 	}
 
 // Create a provide hint button that provides additional clues to the "Player"
@@ -81,10 +86,12 @@ $(document).ready(function(){
 
 // Allow the "Player" to Play Again
 
-	function playAgain(){
-	// add code here
-	}
+	$('button[name=playAgain').on('click', function() {
+		$('.message').text('');
+		winningNumber = generateWinningNumber();
+		console.log(winningNumber);
+		guesses = [];
+		$('.loser, .winner').hide();
+	});
 });
-
-/* **** Event Listeners/Handlers ****  */
 
