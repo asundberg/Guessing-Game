@@ -17,9 +17,9 @@ $(document).ready(function(){
 
 	function generateWinningNumber(){
 	// add code here
-		var numberGenerated = Math.round(Math.random()*100);
-		return numberGenerated;
+		return Math.round(Math.random()*100);
 	}
+
 	winningNumber = generateWinningNumber();
 	console.log(winningNumber);
 
@@ -27,14 +27,15 @@ $(document).ready(function(){
 
 	function playersGuessSubmission(){
 	// add code here
-		playersGuess = parseInt($('input[name=guessNumber]').val());
+		return parseInt($('input[name=guessNumber]').val());		 
 	}
 
 	$('button[name=submit').on('click', function() {
-		playersGuessSubmission();
+		playersGuess = playersGuessSubmission();
 		console.log(playersGuess);
+		$('input[name=guessNumber]').val('');
+		checkGuess();
 	});
-
 
 // Determine if the next guess should be a lower or higher number
 
@@ -43,9 +44,18 @@ $(document).ready(function(){
 	}
 
 // Check if the Player's Guess is the winning number 
+	var guesses = []; 
 
 	function checkGuess(){
 	// add code here
+		if(guesses.indexOf(playersGuess) >= 0) {
+			$('.message').text("Duplicate guess, try again!");
+		} else if(playersGuess === winningNumber) {
+			$('.message').text("Congratulations, you won the game!");
+		} else {
+			$('.message').text("Sorry, wrong number, try again!");
+		}
+		guesses.push(playersGuess);
 	}
 
 // Create a provide hint button that provides additional clues to the "Player"
