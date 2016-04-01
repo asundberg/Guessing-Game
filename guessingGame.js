@@ -30,10 +30,20 @@ $(document).ready(function(){
 		return parseInt($('input[name=guessNumber]').val());		 
 	}
 
-	$('button[name=submit').on('click', function() {
+	function userGuess() {
 		playersGuess = playersGuessSubmission();
 		$('input[name=guessNumber]').val('');
 		checkGuess();
+	}
+
+	$('button[name=submit').on('click', function() {
+		userGuess();		
+	});
+
+	$('input[name=guessNumber]').on('keypress', function(evt) {
+		if(evt.keyCode === 13) {
+			userGuess();
+		}
 	});
 
 // Determine if the next guess should be a lower or higher number
