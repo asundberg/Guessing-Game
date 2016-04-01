@@ -32,7 +32,6 @@ $(document).ready(function(){
 
 	$('button[name=submit').on('click', function() {
 		playersGuess = playersGuessSubmission();
-		console.log(playersGuess);
 		$('input[name=guessNumber]').val('');
 		checkGuess();
 	});
@@ -41,6 +40,23 @@ $(document).ready(function(){
 
 	function lowerOrHigher(){
 	// add code here
+		var message = '';
+		if(playersGuess > winningNumber) {
+			message = 'Your guess is higher ';
+		} else {
+			message = 'Your guess is lower ';
+		}
+		var difference = Math.abs(playersGuess - winningNumber);
+		if(difference > 20) {
+			message += 'and more than 20 digits away from the winning number!';
+		} else if(difference > 10) {
+			message += 'and within 20 digits away from the winning number!';
+		} else if(difference > 5) {
+			message += 'and within 10 digits away from the winning number!';
+		} else {
+			message += 'and really really close!!! Keep guessing!';
+		}
+		return message;
 	}
 
 // Check if the Player's Guess is the winning number 
@@ -53,7 +69,7 @@ $(document).ready(function(){
 		} else if(playersGuess === winningNumber) {
 			$('.message').text("Congratulations, you won the game!");
 		} else {
-			$('.message').text("Sorry, wrong number, try again!");
+			$('.message').text(lowerOrHigher());
 		}
 		guesses.push(playersGuess);
 	}
