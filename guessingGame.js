@@ -10,13 +10,11 @@ $(document).ready(function(){
 	var playersGuess,
     	winningNumber;
 
-
 /* **** Guessing Game Functions **** */
 
 // Generate the Winning Number
 
 	function generateWinningNumber(){
-	// add code here
 		return Math.round(Math.random()*100);
 	}
 
@@ -26,7 +24,6 @@ $(document).ready(function(){
 // Fetch the Players Guess
 
 	function playersGuessSubmission(){
-	// add code here
 		return parseInt($('input[name=guessNumber]').val());		 
 	}
 
@@ -49,7 +46,6 @@ $(document).ready(function(){
 // Determine if the next guess should be a lower or higher number
 
 	function lowerOrHigher(){
-	// add code here
 		var message = '';
 		if(playersGuess > winningNumber) {
 			message = 'Your guess is higher ';
@@ -81,7 +77,7 @@ $(document).ready(function(){
 		} else if(guesses.indexOf(playersGuess) >= 0) {
 			$('.message').text('Duplicate guess, try again!');
 		} else if(playersGuess === winningNumber) {
-			$('.message').text('Yay!! Congratulations, you won the game!');
+			$('.message').text('Congratulations, you won the game!');
 			$('.winner').show();
 		} else {
 			guesses.push(playersGuess);

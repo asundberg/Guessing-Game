@@ -3,41 +3,46 @@ body {
 }
 h1 {
 	margin-bottom: 30px;
-	color: #c01b67;
-	font: 45px American Typewriter, Lucida, serif;
+	color: black;
+	font: 55px Avenir, sans-serif;
+}
+
+h2 {
+	color: black;
+	font: 25px Avenir, sans-serif;	
 }
 
 input {
 	height: 52px;
 	width: 200px;
 	text-align: center;
-	font: 13px American Typewriter, Lucida, serif;
+	font: 20px Avenir, sans-serif;
 }
 
 button {
-    height: 52px;
-    background: #cf5b6f;
+    height: 65px;
+    background: #88ddf7;
     border: 2px solid rgba(33, 68, 72, 0.59);
     border-radius: 5px;
  	/*text styling next*/
  	color: black;
     text-align: center;
     padding: 5px;
-    font: 20px American Typewriter, Lucida, serif;
+    font: 20px Avenir, sans-serif;
     cursor: pointer;
 }
 
 button[name="hint"] {
-	margin: 10px;
+	margin: 20px;
 }
 
 button[name="playAgain"] {
-	margin: 10px;
+	margin: 20px;
 }
 
 button:hover {
 	color: black;
-	background: #bf384f;
+	background: #59cff4;
 }
 
 img {
@@ -45,10 +50,10 @@ img {
 }
 
 .message {
-	margin: 10px;
-	color: #c01b67;
-	font: 20px American Typewriter, Lucida, serif;
-	font-weight: italic;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	color: black;
+	font: 25px Avenir, sans-serif;
 }
 
 .loser {
